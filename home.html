@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <style>
+      .timeblck{
+      background-color:white;
+      border-style:solid;
+      border-color:black;
+      }
+
+      .asideblck{
+      background-color:white;
+      border-style:solid;
+      border-color:black;
+      }
+
+      th{border-radius:100px; background-color:blue}
+      a{color:white;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="dualtrans.css" />
+  </head>
+  <body>
+    <aside>
+       <div class="timeblck"> Time Remaining
+        <div class="timeblck1">
+          <div class="hidden1"></div>
+          <div class="timer">
+          <span id="countdown" ></span>
+          <script type="text/javascript">
+	    <!--
+                var seconds = 1200;
+                function secondPassed() {
+                var minutes = Math.round((seconds - 30)/60);
+                var remainingSeconds = seconds % 60;
+                if (remainingSeconds < 10) {
+                remainingSeconds = "0" + remainingSeconds;
+                }
+                document.getElementById('countdown').innerHTML = minutes + ":" + remainingSeconds;
+                if (seconds == 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = "Buzz Buzz";
+                } else {
+                seconds--;
+               }
+               }
+	       var countdownTimer = setInterval('secondPassed()', 1000);
+	      -->
+          </script>
+          </div>
+        </div>
+      </div>
+      <div class="profile">Student Details
+	<div>
+	  <img src="profile.jpg" alt="Upload pic" width="150px" height="175px"></img>
+	</div>
+      </div>
+      <div class="asideblck" > QUESTIONS
+	<div class="asideblck1">
+	  <p class="hidden">Jump to</p>
+	</div>
+	<div class="links">
+	  <table border="1" width="100%">
+	    <tbody>
+              <tr rowspan="2" >
+		<th colspan="4"><a href="s1q1.html" target="ques">1</a></th>
+		<th colspan="4"><a href="s1q2.html" target="ques">2</a></th>
+		<th colspan="4"><a href="s1q3.html" target="ques">3</a></th>
+              </tr>
+              <tr rowspan="2">
+		<th colspan="4" onmouseover="foo(this)"><a href="s1q4.html" id="qid4" target="ques">4</a></th>
+		<th colspan="4"><a href="">5</a></th>
+		<th colspan="4"><a href="">6</a></th>
+              </tr>
+	      <tr rowspan="2">
+                <th colspan="4"><a href="">7</a></th>
+                <th colspan="4"><a href="">8</a></th>
+                <th colspan="4"><a href="">9</a></th>
+              </tr>
+	      <tr rowspan="2">
+                <th colspan="4"><a href="">10</a></th>
+                <th colspan="4"><a href="">11</a></th>
+                <th colspan="4"><a href="">12</a></th>
+              </tr>
+	      <tr rowspan="2">
+                <th colspan="4"><a href="">13</a></th>
+                <th colspan="4"><a href="">14</a></th>
+                <th colspan="4"><a href="">15</a></th>
+              </tr>
+	    </tbody>
+	  </table>
+	</div>	
+      </div>
+    </aside>
+    <script type="text/javascript">
+      <!--
+	  function foo(a)
+	  {
+	    var e =document.createElement("div");
+	    var x = event.clientX;
+	    var y = event.clientY;
+	    a.appendChild(e);
+	    e.style.backgroundColor="red";
+	    e.style.position="absolute"
+	    e.style.bottom=x+5;
+	    e.style.right=y+5;
+	    e.innerHtml="1";
+	  }
+	  -->
+      </script>
+  </body>
+</html>
