@@ -14,7 +14,7 @@
       }
 
       th{border-radius:100px; background-color:blue}
-      a{color:white;}
+      a{color:black}
     </style>
     <link rel="stylesheet" type="text/css" href="dualtrans.css" />
   </head>
@@ -61,12 +61,12 @@
 	  <table border="1" width="100%">
 	    <tbody>
               <tr rowspan="2" >
-		<th colspan="4"><a href="s1q1.html" target="ques">1</a></th>
-		<th colspan="4"><a href="s1q2.html" target="ques">2</a></th>
-		<th colspan="4"><a href="s1q3.html" target="ques">3</a></th>
+		<th colspan="4" onmouseover="foo4('1',event)" onmouseout="rfoo4(this)"><a href="s1q1.html" target="ques">1</a></th>
+		<th colspan="4" onmouseover="foo4('2',event)" onmouseout="rfoo4(this)"><a href="s1q2.html" target="ques">2</a></th>
+		<th colspan="4" onmouseover="foo4('3',event)" onmouseout="rfoo4(this)"><a href="s1q3.html" target="ques">3</a></th>
               </tr>
               <tr rowspan="2">
-		<th colspan="4" onmouseover="foo(this)"><a href="s1q4.html" id="qid4" target="ques">4</a></th>
+		<th colspan="4" onmouseover="foo4('4',event)" onmouseout="rfoo4(this)"><a href="s1q4.html" id="qid4" target="ques">4</a></th>
 		<th colspan="4"><a href="">5</a></th>
 		<th colspan="4"><a href="">6</a></th>
               </tr>
@@ -80,11 +80,6 @@
                 <th colspan="4"><a href="">11</a></th>
                 <th colspan="4"><a href="">12</a></th>
               </tr>
-	      <tr rowspan="2">
-                <th colspan="4"><a href="">13</a></th>
-                <th colspan="4"><a href="">14</a></th>
-                <th colspan="4"><a href="">15</a></th>
-              </tr>
 	    </tbody>
 	  </table>
 	</div>	
@@ -92,19 +87,36 @@
     </aside>
     <script type="text/javascript">
       <!--
-	  function foo(a)
+	  localStorage.setItem("1", "What is the capital of India?");
+	  localStorage.setItem("2", "q2");
+	  localStorage.setItem("3", "q3");
+	  localStorage.setItem("4", "q4");
+
+	  function foo4(a)
 	  {
-	    var e =document.createElement("div");
-	    var x = event.clientX;
-	    var y = event.clientY;
-	    a.appendChild(e);
-	    e.style.backgroundColor="red";
-	    e.style.position="absolute"
-	    e.style.bottom=x+5;
-	    e.style.right=y+5;
-	    e.innerHtml="1";
+	    var de = document.createElement("div");
+	    document.body.appendChild(de);
+	    var x=event.clientX;
+	    var y=event.clientY;
+	    de.style.position = "absolute";
+	    de.style.top="310px";
+	    de.style.backgroundColor="white"
+	    de.style.left="10px";
+	    de.style.border="2px";
+	    de.style.padding="20px";
+	    de.width="130px";
+	    de.style.textAlign="centre"
+	    de.id ="x1";
+	    de.innerHTML=localStorage.getItem(a);
 	  }
-	  -->
+
+	  function rfoo4(a)
+	  {
+	    a.style.backgroundColor = "blue";
+	    var x =document.getElementById("x1");
+	    document.body.removeChild(x);
+	  }  
+	 //-->
       </script>
   </body>
 </html>
